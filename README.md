@@ -6,6 +6,17 @@ Add the following to mix.exs
 mod: {Sequence.Application, []}
 ```
 
+eg.
+
+```
+def application do
+  [
+    extra_applications: [:logger],
+    mod: {Sequence.Application, []}
+  ]
+end
+```
+
 Add the following to your “application” e.g Sequence.Application
 
 ```
