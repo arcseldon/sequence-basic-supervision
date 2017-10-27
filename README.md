@@ -1,6 +1,31 @@
 # Sequence
 
-**TODO: Add description**
+Add the following to mix.exs
+
+```
+mod: {Sequence.Application, []}
+```
+
+Add the following to your “application” e.g Sequence.Application
+
+```
+  def start(_type, _args) do
+    children = [ { Sequence.Server, 100 } ]
+    opts = [strategy: :one_for_one, name: Sequence.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+```
+
+Add the following init() to your GenServer
+
+```
+def init(state) do
+  {:ok, state}
+end
+```
+
+
+
 
 ## Installation
 
